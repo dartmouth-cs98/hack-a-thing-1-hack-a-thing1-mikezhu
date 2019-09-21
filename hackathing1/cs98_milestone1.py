@@ -18,7 +18,9 @@ from sklearn.svm import SVC
 source_url = "https://raw.githubusercontent.com/kolaveridi/kaggle-Twitter-US-Airline-Sentiment-/master/Tweets.csv"
 
 def main():
-	import_data(source_url)
+	classifier = import_data(source_url)
+	#sentence = process_sentence(u_input)
+	#predictions = classifier.predict(sentence)
 
 def import_data(url):
 	print("Importing data...")
@@ -77,8 +79,12 @@ def import_data(url):
 	svm_classifier = SVC(kernel='linear')
 	svm_classifier.fit(X_train, y_train)
 	svm_predictions = svm_classifier.predict(X_test)
-	print(accuracy_score(y_test, svm_predictions))
+	# print(accuracy_score(y_test, svm_predictions))
+	return svm_classifier
 
+def process_sentence(u_input):
+	pass
+	
 main()
 
 
