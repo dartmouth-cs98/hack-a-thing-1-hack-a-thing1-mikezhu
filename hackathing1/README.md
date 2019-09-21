@@ -13,6 +13,7 @@ The tutorials for creating the sentiment analyzer and a basic React website buil
 - https://www.datacamp.com/community/tutorials/k-nearest-neighbor-classification-scikit-learn
 - https://stackabuse.com/implementing-svm-and-kernel-svm-with-pythons-scikit-learn/
 - https://www.meteor.com/tutorials/react/creating-an-app
+- https://reactjs.org/docs/forms.html
 
 ## Work
 

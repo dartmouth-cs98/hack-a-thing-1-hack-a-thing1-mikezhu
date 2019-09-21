@@ -1,34 +1,48 @@
 import React, { Component } from 'react';
- 
-import Task from './Task.js';
- 
+  
 // App component - represents the whole app
 export default class App extends Component {
-  getTasks() {
-    return [
-      { _id: 1, text: 'This is task 1' },
-      { _id: 2, text: 'This is task 2' },
-      { _id: 3, text: 'This is task 3' },
-    ];
+
+  constructor(props) {
+    super(props);
+    this.state = {value: '', sentiment: ''};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
- 
-  renderTasks() {
-    return this.getTasks().map((task) => (
-      <Task key={task._id} task={task} />
-    ));
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    event.preventDefault()
+    console.log('A name was submitted: ' + this.state.value);
   }
  
   render() {
     return (
-      <div className="container">
+      <form onSubmit={this.handleSubmit} className="container">
         <header>
-          <h1>Todo List</h1>
+          <h1>Enter your phrase below!</h1>
         </header>
- 
         <ul>
-          {this.renderTasks()}
+          <div>
+            <input id="search" placeholder="Your phrase" value={this.state.value} onChange={this.handleChange}/>
+          </div>
+          <div>
+            <button id="submit" placeholder="Submit" onSubmit={this.handleSubmit}> Search </button>
+          </div>
+          <div id="result">
+            {this.state.sentiment}
+          </div>
         </ul>
-      </div>
+      </form>
     );
   }
 }
+
+
+
+
+
