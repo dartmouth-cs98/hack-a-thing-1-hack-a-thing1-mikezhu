@@ -84,7 +84,7 @@ def import_data(url):
 
 def process_sentence(u_input):
 	pass
-	
+
 main()
 
 
