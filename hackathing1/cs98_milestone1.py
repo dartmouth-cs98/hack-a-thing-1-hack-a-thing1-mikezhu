@@ -7,6 +7,7 @@ import numpy as np
 import pandas as pd 
 import re
 import nltk 
+import sys
 from nltk.corpus import stopwords
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
@@ -18,7 +19,8 @@ from sklearn.svm import SVC
 source_url = "https://raw.githubusercontent.com/kolaveridi/kaggle-Twitter-US-Airline-Sentiment-/master/Tweets.csv"
 
 def main():
-	classifier = import_data(source_url)
+	print(sys.argv[1] + " hello world")
+	# classifier = import_data(source_url)
 	#sentence = process_sentence(u_input)
 	#predictions = classifier.predict(sentence)
 

@@ -15,9 +15,21 @@ export default class App extends Component {
     this.setState({value: event.target.value});
   }
 
-  handleSubmit(event) {
+  async handleSubmit(event) {
     event.preventDefault()
-    console.log('A name was submitted: ' + this.state.value);
+    console.log('A phrase was submitted: ' + this.state.value);
+    let result;
+    await Meteor.call('sendPhrase', this.state.value,
+      (err, res) => {
+        if (err) {
+          console.log("Error");
+        }
+        else {
+          result = res
+        }
+      }
+    );
+    console.log(result)
   }
  
   render() {
