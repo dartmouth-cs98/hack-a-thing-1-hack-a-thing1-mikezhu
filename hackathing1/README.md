@@ -31,6 +31,8 @@ It was initially challenging to download all the dependencies for Meteor and the
 
 Ultimately, I found a great way to connect the Python script to the Meteor backend server, but could not do it in a way that allowed the Python script to finish running before returning a result. In other words, my "result" on the front-end was always undefined, as the Python script would take a while to run. I tried various solutions (e.g. await/async, Future, Promises) for a long time, but just couldn't figure out a solution for that. As a result, this project isn't functionally complete, as I couldn't figure out how to connect the two separate parts. 
 
-Still, this project was a great way to learn a little bit about basic web dev and the challenges within web dev, and also to review machine learning and the various algorithms that are made easy to use through scikit-learn and Python.
+I also couldn't figure out how to take in user input and put that input into the classifier for it to create a prediction. This is something that I do hope to figure out just for my own sake.
+
+Altogether, despite its shortcomings, this project was still a great way to learn a little bit about basic web dev and the challenges within web dev, and also to review machine learning and the various algorithms that are made easy to use through scikit-learn and Python.
 
 
